@@ -1,17 +1,30 @@
-## Turbochat
+## Test Chat
 
 ### Description
 
 Simple chat with Hotwire, Turbo and Stimulus.
 
-Implemented in Ruby 3.0 using Rails 7.0 and PostgreSQL.
+Implemented in Ruby 3 using Rails 7 and PostgreSQL.
 
 ### Launching
 
-1. Download or clone repo. Install all dependencies and prepare database
+1. Download or clone repo. Install all dependencies using bundle
 
 ```bash
-$ bin/setup
+$ bundle
+```
+
+2. Run postgresql and redis
+
+```bash
+$ docker compose up --build redis postgresql
+```
+
+3. Prepare databases
+
+```bash
+$ rails db:prepare
+$ rails db:migrate
 ```
 
 2. Start server
