@@ -1,0 +1,15 @@
+<div class='flex flex-col justify-center items-center' >
+  <% if user_signed_in? %>
+    <%= turbo_frame_tag Room.new do %>
+      <%= render 'new_room_link' %>
+    <% end %>
+  <% end %>
+
+  <%= turbo_frame_tag :rooms do %>
+    <div class="mt-10 flex gap-7 flex-wrap justify-between aling-center">
+      <%= render @rooms %>
+    </div>
+  <% end %>
+</div>
+
+<%= turbo_stream_from :rooms %>
