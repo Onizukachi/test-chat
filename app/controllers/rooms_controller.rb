@@ -1,4 +1,6 @@
 class RoomsController < ApplicationController
+  before_action :authenticate_user!, only: %i[new create]
+
   def index
     @rooms = Room.all
   end
@@ -8,12 +10,12 @@ class RoomsController < ApplicationController
   end
 
   def create
-    @room = current_user&.rooms&.build(room_params)
+    @room = current_user.rooms.build(room_params)
 
-    if @room&.save
+    if @room.save
       respond_to do |format|
-        format.html { redirect_to rooms_path, notice: "Room was successfully created." }
-        format.turbo_stream
+        format.html { redirect_to rooms_path, flash[:success] = "Room was successfully created." }
+        format.turbo_stream { flash.now[:success] = "Room was successfully created." }
       end
     else
       render :new, status: :unprocessable_entity
