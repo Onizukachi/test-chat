@@ -15,13 +15,13 @@ export default class extends Controller {
 
     this.subscription = consumer.subscriptions.create({ channel: channelName, signed_stream_name: signedStreamName }, {
       received(data) {
-        setTimeout(scrollMessages, 100)
+        setTimeout(scrollMessages, 100);
       }
     })
   }
 
   clearInput() {
-    this.element.reset()
+    this.element.reset();
   }
 
   scrollMessages() {
