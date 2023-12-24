@@ -5,4 +5,11 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :validatable
+
+  def name
+    name = email.split('@').first.strip
+    return email if name.blank?
+
+    name
+  end
 end

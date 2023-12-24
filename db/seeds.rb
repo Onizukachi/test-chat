@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+
+# Создаем гостевого юзера для привязки сообщений с апи
+User.create(email: 'guest@mail.ru', password: 'potolok123', password_confirmation: 'potolok123')
