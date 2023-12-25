@@ -1,4 +1,18 @@
 services:
+  web:
+    build: .
+    volumes:
+      - bundle:/usr/local/bundle
+       - .:/app
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.development
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
   postgres:
     image: postgres:latest
     environment:
@@ -28,3 +42,4 @@ services:
 volumes:
   pg_data:
   redis_data:
+  bundle:
