@@ -1,16 +1,5 @@
 ## Test Chat
 
-to create a message using  API, make a request like this
-
-```bash
-$ http POST http://localhost:3000/api/v1/messages room_title=sample message=Hello
-```
-to get all the rooms
-
-```bash
-$ http GET http://localhost:3000/api/v1/messages
-```
-
 ### Description
 
 Simple chat with Hotwire, Turbo and Stimulus.
@@ -28,9 +17,20 @@ Implemented in Ruby 3 using Rails 7 and PostgreSQL.
 $ docker compose up --build
 ```
 
-3. You can create test guest user for API
+To create a message using  API, make a request like this
+
+```bash
+$ http POST http://localhost:3000/api/v1/messages room_title=sample message=Hello
+```
+but before you need create guest user
 
 ```bash
 $ docker compose exec web bin/rails db:seed
+```
+
+to get all the rooms
+
+```bash
+$ http GET http://localhost:3000/api/v1/messages
 ```
 Enjoy....
