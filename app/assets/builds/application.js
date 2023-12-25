@@ -7466,6 +7466,7 @@
   var flash_message_controller_default = class extends Controller {
     static targets = ["flash"];
     connect() {
+      console.log("dsadasdsdsdas");
       setTimeout(() => {
         this.flashTarget.remove();
       }, 5e3);

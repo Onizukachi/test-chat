@@ -54,16 +54,20 @@
       <main> 
         <%= audio_tag("notification.mp3", id: 'audio') %>
         <div class='flex'>
-          <%= turbo_frame_tag 'toasts' %>
-          
-          <div class="grow mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-            <div id='flash' class="flash">
-              <%= render 'shared/flash' %>
+          <div class='grow-0 shrink-0 self-start w-72 top-13'>
+            <div class='flex flex-col' id='toasts'>
             </div>
+          </div>
 
-            <%= yield %>
+            <div class="grow max-w-7xl py-6 sm:px-6 lg:px-8">
+              <div id='flash' class="flash">
+                <%= render 'shared/flash' %>
+              </div>
 
-            <%= turbo_stream_from('toasts') if current_user %>
+              <%= yield %>
+
+              <%= turbo_stream_from('toasts') if current_user %>
+            </div>
           </div>
         </div>
       </main>

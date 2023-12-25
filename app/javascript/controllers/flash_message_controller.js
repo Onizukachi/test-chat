@@ -5,6 +5,7 @@ export default class extends Controller {
   static targets = ['flash']
 
   connect() {
+    console.log('dsadasdsdsdas')
     setTimeout(() => {
       this.flashTarget.remove();
     }, 5000) // Remove toast after 5 seconds
