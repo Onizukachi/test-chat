@@ -19,27 +19,18 @@ Implemented in Ruby 3 using Rails 7 and PostgreSQL.
 
 ### Launching
 
-1. Download or clone repo. Install all dependencies using bundle
+1. Download or clone repo. 
+
+
+2. Run all services
 
 ```bash
-$ bundle
+$ docker compose up --build
 ```
 
-2. Run postgresql and redis
+3. Ypu can create test guest user for API
 
 ```bash
-$ docker compose up --build redis postgresql
+$ docker compose exec web bin/rails db:seed
 ```
-
-3. Prepare databases
-
-```bash
-$ rails db:prepare
-$ rails db:migrate
-```
-
-2. Start server
-
-```bash
-$ bin/dev
-```
+Enjoy....
