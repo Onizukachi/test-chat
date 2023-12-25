@@ -28,7 +28,7 @@ Implemented in Ruby 3 using Rails 7 and PostgreSQL.
 $ docker compose up --build
 ```
 
-3. Ypu can create test guest user for API
+3. You can create test guest user for API
 
 ```bash
 $ docker compose exec web bin/rails db:seed
