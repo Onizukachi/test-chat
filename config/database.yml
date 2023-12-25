@@ -1,20 +1,20 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  username: <%= ENV.fetch("POSTGRES_USER") { "onizuka" } %> 
-  password: <%= ENV.fetch("POSTGRES_PASSWORD") { "potolok149" } %> 
+  username: <%= ENV.fetch("POSTGRES_USER") { "postgres" } %> 
+  password: <%= ENV.fetch("POSTGRES_PASSWORD") { "password" } %> 
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
   database: test_chat_dev
-  host: <%= ENV.fetch("DB_HOST") { "localhost" } %>
-
+  host: <%= ENV.fetch("DB_HOST") { "localhost" } %> 
+  port: <%= ENV.fetch("DB_PORT") { "5445" } %> 
 test:
   <<: *default
-  database: test_chat_
-  host: <%= ENV.fetch("DB_HOST") { "localhost" } %>
-
+  database: test_chat
+  host: <%= ENV.fetch("DB_HOST") { "localhost" } %> 
+  port: <%= ENV.fetch("DB_PORT") { "5445" } %> 
 production:
   <<: *default
   database: production

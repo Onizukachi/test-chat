@@ -5,11 +5,10 @@
     <% end %>
   <% end %>
 
-  <%= turbo_frame_tag :rooms do %>
-    <div class="mt-10 flex gap-7 flex-wrap justify-between aling-center">
-      <%= render @rooms %>
-    </div>
-  <% end %>
+  
+  <div id='rooms' class="mt-10 flex gap-7 flex-wrap justify-between aling-center">
+    <%= render @rooms %>
+  </div>
 </div>
 
 <%= turbo_stream_from :rooms %>
