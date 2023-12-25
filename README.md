@@ -1,5 +1,7 @@
 ## Test Chat
 
+![image](https://github.com/Onizukachi/test-chat/assets/88194131/632b2be2-348a-453a-bd22-12e93e2b9980)
+
 ### Description
 
 Simple chat with Hotwire, Turbo and Stimulus.
