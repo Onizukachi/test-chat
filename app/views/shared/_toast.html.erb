@@ -2,7 +2,7 @@
   <div class="flex">
       <div class="ms-3 text-sm font-normal">
       <span class="mb-1 text-sm font-semibold text-gray-900 dark:text-white"><%= message.room.title %></span>
-      <div class="mb-2 text-sm font-normal"><%= message.body %> Привет мой раб ты кто такой вообще</div> 
+      <div class="mb-2 text-sm font-normal"><%= message.body %></div> 
       <%= link_to 'Reply', room_path(message.room.title), data: { turbo_frame: '_top' }, class: 'inline-flex px-2.5 py-1.5 text-xs font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-blue-800' %>
     </div>
     <button type="button" data-action="click->flash-message#close" class="ms-auto -mx-1.5 -my-1.5 bg-gray-300 justify-center items-center flex-shrink-0 text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700" data-dismiss-target="#toast-message-cta" aria-label="Close">
