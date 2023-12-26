@@ -33,6 +33,6 @@ $ docker compose exec web bin/rails db:seed
 to get all the rooms
 
 ```bash
-$ http GET http://localhost:3000/api/v1/messages
+$ http GET http://localhost:3000/api/v1/rooms
 ```
 Enjoy....
